@@ -33,11 +33,11 @@ def promote(bot: Bot, update: Update, args: List[str]) -> str:
 
     user_member = chat.get_member(user_id)
     if user_member.status == 'administrator' or user_member.status == 'creator':
-        message.reply_text("How am I meant to promote someone that's already an admin?")
+        message.reply_text("ഇയാൾ നേരത്തെതന്നെ അഡ്മിൻ ആണ് മിഷ്ടർ.. 🤨")
         return ""
 
     if user_id == bot.id:
-        message.reply_text("I can't promote myself! Get an admin to do it for me.")
+        message.reply_text("എനിക്ക് സ്വയം പദവി ഏറ്റെടുക്കാൻ സാധിക്കില്ല.. മുൻപേ അഡ്മിൻ ആയിട്ടുള്ള ഒരാളെക്കൊണ്ട് മാത്രമേ അതിന് സാധിക്കുകയുള്ളു...")
         return ""
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -79,15 +79,15 @@ def demote(bot: Bot, update: Update, args: List[str]) -> str:
 
     user_member = chat.get_member(user_id)
     if user_member.status == 'creator':
-        message.reply_text("ഗ്രൂപ്പ് ഉണ്ടാക്കിയ ആളെ ബാൻ ചെയ്യാൻമാത്രം തോമ ചെറ്റയല്ല.... 😬")
+        message.reply_text("ഇയാൾ ആണ് മിഷ്ടർ ഗ്രൂപ്പ് ഉണ്ടാക്കിയിരിക്കുന്നത്... ഇയാളെ promote ചെയ്യേണ്ട ആവശ്യം ഇല്ല...")
         return ""
 
     if not user_member.status == 'administrator':
-        message.reply_text("Can't demote what wasn't promoted!")
+        message.reply_text("ഞാൻ അഡ്മിൻ ആക്കിയ ആളുകളുടെ മാത്രം അഡ്മിൻ സ്ഥാനം കളയാനെ എനിക്ക് സാധിക്കു... ")
         return ""
 
     if user_id == bot.id:
-        message.reply_text("I can't demote myself! Get an admin to do it for me.")
+        message.reply_text("എന്റെ അഡ്മിൻ സ്ഥാനം കളയാൻ എനിക്ക് സാധിക്കില്ല... അതിന് വേറെ ആദമിന്റെ സഹായം വേണം...")
         return ""
 
     try:
