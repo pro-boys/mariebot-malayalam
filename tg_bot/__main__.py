@@ -24,17 +24,6 @@ PM_START_TEXT = """
 python-telegram-bot library ഉപയോഗിച്ചാണ്.... ഞാൻ പൂർണമായും opensource ആണ്.. എന്റെ കോഡ് നിങ്ങൾക്ക് [ഇവിടെ](github.com/AbinPaulZackariah/mariebot-malayalam) കാണാവുന്നതാണ്...
 എന്നെ ഉപയോഗിക്കാൻ ആവിശ്യമായ commandകൾ അറിയാൻ /help കൊടുത്താൽ മതിയാകും..
 
-Using standard [Marie](http://telegram.dog/BanhammerMarie_bot) is always gonna be easier.
-Perks:
-- latest features
-- it's free
-- biggest list of users for any /info commands
-- the database will always be correctly formatted
-- bugs will always be fixed ASAP
-- no need to maintain anything yourself
-Also, no support can be given for any [clones like this](https://telegram.dog/MissAnn_Bot); source might be changed and that's not [my](https://telegram.dog/PaulSonOfLars) problem.
-**Keep in mind that any changes you DO do to the source have to be on github, as per the license.**
-
 """
 
 HELP_STRINGS = """
