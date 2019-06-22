@@ -87,7 +87,7 @@ def demote(bot: Bot, update: Update, args: List[str]) -> str:
         return ""
 
     if user_id == bot.id:
-        message.reply_text("എന്റെ അഡ്മിൻ സ്ഥാനം കളയാൻ എനിക്ക് സാധിക്കില്ല... അതിന് വേറെ ആദമിന്റെ സഹായം വേണം...")
+        message.reply_text("എന്റെ അഡ്മിൻ സ്ഥാനം കളയാൻ എനിക്ക് സാധിക്കില്ല... അതിന് വേറെ അഡ്മിന്റെ സഹായം വേണം...")
         return ""
 
     try:
