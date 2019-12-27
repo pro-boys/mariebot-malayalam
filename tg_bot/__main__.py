@@ -18,27 +18,30 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {}, my name is {}!.  To get this bot status info and update, you can join our group @Mia_support
+ഹായ് {}, എന്റെ പേര് {}! എന്നെ ഉപയോഗിക്കേണ്ടത് എങ്ങനെ ആണെന്നുള്ളതിൽ എന്തേലും സംശയം ഉണ്ടെങ്കിൽ /help കൊടുത്താൽ മതിയാകും... സംശയങ്ങൾക്ക് @Keralasbots എന്ന ഗ്രൂപ്പിൽ വരാവുന്നതാണ്.....
 
-You can find the list of available commands with /help.
+എന്നെ നോക്കി നടത്തുന്നത്  [ഇദ്ദേഹം](tg://user?id={}) ആണ് . എന്നെ നിർമിച്ചിരിക്കുന്നത് python3യിൽ 
+python-telegram-bot library ഉപയോഗിച്ചാണ്.... ഞാൻ പൂർണമായും opensource ആണ്..  ഉപയോഗിക്കാൻ ആവിശ്യമായ commandകൾ അറിയാൻ /help കൊടുത്താൽ മതിയാകും..
 
-If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
 """
 
 HELP_STRINGS = """
-Hi I am {}.
-*Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
- - /donate: information about how to donate!
+നമസ്കാരം ! എന്റെ പേര് *{}*.
+
+ഞാൻ ടെലെഗ്രാമിലെ Group Management Bot ആണ്... എന്നെ പ്രവർത്തിപ്പിക്കേണ്ട വിധം ആണ് താഴെ കൊടുത്തിട്ടുള്ളത്....
+
+*Main* ലഭ്യമായ commandകൾ:
+ - /start: Botനെ Start ചെയ്യാൻ...
+ - /help: ഈ മെസ്സേജ് നിങ്ങളുടെ PM വരാൻ....
+ - /help <module name>: ഒരു MODULE നെക്കുറിച്ചുള്ള വിവരം നിങ്ങളുടെ PMൽ വരാൻ....
+ - /donate: സംഭാവന നൽകുന്നതിനെക്കുറിച്ചുള്ള വിവരങ്ങൾ അറിയാൻ!
  - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
-All commands can either be used with / or !.
-And the following:
+   - in PM:നിങ്ങൾ സെറ്റ് ചെയ്തിട്ടുള്ള SETTINGS എന്തൊക്കെ ആണെന്ന് അറിയാൻ....
+   - in a group:ഗ്രൂപ്പിൽ കൊടുത്താലും  PMൽ settings വരുന്നതാണ്....
+
 {}
-""".format(dispatcher.bot.first_name, "if not ALLOW_EXCL else "\nഈ പറഞ്ഞിരിക്കുന്ന commandകൾ എല്ലാം  / അല്ലെങ്കിൽ ! വെച്ച് ഉപയോഗിക്കാവുന്നതാണ്...\n")
+And the following:
+""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nഈ പറഞ്ഞിരിക്കുന്ന commandകൾ എല്ലാം  / അല്ലെങ്കിൽ ! വെച്ച് ഉപയോഗിക്കാവുന്നതാണ്...\n")
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 It took lots of work for [my creator](t.me/SonOfLars) to get me to where I am now, and every donation helps \
@@ -135,7 +138,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name)),
+                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN)
     else:
         update.effective_message.reply_text("Yo, whadup?")
