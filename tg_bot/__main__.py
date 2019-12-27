@@ -18,7 +18,7 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {}, my name is {}! To get this bot status info and update, you can join our group @Mia_support
+Hi {}, my name is {}! My master is {} .  To get this bot status info and update, you can join our group @Mia_support
 
 You can find the list of available commands with /help.
 
